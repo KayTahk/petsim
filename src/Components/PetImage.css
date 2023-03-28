@@ -1,0 +1,118 @@
+
+.petImage {
+    width: 35em;
+    height: 20em;
+    border-radius: 20px;
+    border: 10px solid #7B6079;
+    background-color: #F7F5EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5em
+}
+
+.petImage .body {
+    height: 20em;
+    width: 25em;
+    border-radius: 50%  50% 25% 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 7px solid #98928E;
+    position: absolute;
+    animation-name: pet;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+.eye {
+    position: relative;
+  }
+
+  .eye::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .eye::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+
+.eyes {
+    display: flex;
+    flex-direction: row;
+    font-size: 4em;
+    gap: 2em;
+}
+
+.ears {
+    display: flex;
+    flex-direction: row;
+    font-size: 5em;
+    gap: 1.25em;
+    align-items: baseline;
+}
+
+.left-ear {
+    height: 1.5em;
+    width: 1.5em;
+    border-style: solid;
+    border: 7px solid #98928E
+}
+
+.right-ear {
+    height: 1.5em;
+    width: 1.5em;
+    border-style: solid;
+    border: 7px solid #98928E;
+}
+
+.mouth {
+    background-color: pink;
+    border: 2px solid #98928E;
+    position: relative;
+  }
+
+  .mouth::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 10px;
+    background-color: darksalmon;
+    border-radius: 50% 50% 10px 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+@keyframes pet {
+    0%   {left: calc(48% - 12.5em); height: 20em;}
+    12%  {left: calc(48% - 12.5em); height: 17em;}
+    25%  {left: calc(48% - 12.5em); height: 20em;}
+    37%  {left: calc(50% - 12.5em); height: 17em;}
+    50%   {left: calc(52% - 12.5em); height: 20em;}
+    62%   {left: calc(52% - 12.5em); height: 17em;}
+    75%  {left: calc(52% - 12.5em); height: 20em;}
+    87%  {left: calc(50% - 12.5em); height: 17em;}
+    100%   {left: calc(48% - 12.5em); height: 20em;}
+  }

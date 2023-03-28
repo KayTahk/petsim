@@ -1,5 +1,61 @@
+
 .App {
   text-align: center;
+}
+
+body {
+  background: linear-gradient(135deg, #FFE9D6 1.2em, rgba(232, 58, 37, 0) 1.2em) 0 4em,
+  linear-gradient(-135deg, #FFE9D6 1.2em, rgba(232, 58, 37, 0) 1.2em) 0 4em,
+  radial-gradient(circle at 7.16em 7.4em, #FFE9D6 1.02em, rgba(232, 58, 37, 0) 1.044em) 0 -4em,
+  radial-gradient(circle at 0.84em 7.4em, #FFE9D6 1.02em, rgba(232, 58, 37, 0) 1.044em) 0 -4em,
+  linear-gradient(135deg, #EAC7C7 1.2em, rgba(152, 204, 150, 0) 1.2em) 4em 0,
+  linear-gradient(-135deg, #EAC7C7 1.2em, rgba(152, 204, 150, 0) 1.2em) 4em 0,
+  radial-gradient(circle at 7.16em 7.4em, #EAC7C7 1.02em, rgba(152, 204, 150, 0) 1.044em) 4em 0,
+  radial-gradient(circle at 0.84em 7.4em, #EAC7C7 1.02em, rgba(152, 204, 150, 0) 1.044em) 4em 0;
+  background-size: 8em 8em;
+  background-color: #F7F5EB;
+  background-repeat: repeat;
+  font: 16px/2 "Trebuchet MS", Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.selections {
+  margin-top: 20px;
+  width: 42.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: #F7F5EB;
+  padding: 20px;
+  border: 10px solid #7B6079;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.selection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 15em;
+  gap: 10px;
+  justify-content: center;
+}
+
+.selections label {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .App-logo {
