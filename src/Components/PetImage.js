@@ -39,8 +39,8 @@ function PetImage(props) {
         <div className="petImage">
             <button className="body" style={{backgroundColor: props.colorChoice}} {...isHoverProps} {...isFocusProps}>
                 <div className='ears'>
-                    <div className='left-ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice}}></div>
-                    <div className='right-ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice, transform: 'rotate(90deg)'}}></div>
+                    <div className='ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice}}></div>
+                    <div className='ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice, transform: 'rotate(90deg)'}}></div>
                 </div>
                 <div className="eyes">
                     <div className="eye" style={eyeStyle}></div>

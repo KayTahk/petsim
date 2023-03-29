@@ -1,5 +1,5 @@
 import './App.css';
-import PetSelections from './Components/FeatureSelections';
+import PetSelections from './Components/PetSelections';
 
 function App() {
 
