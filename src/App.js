@@ -1,13 +1,11 @@
 import './App.css';
-import PetSelections from './Components/PetSelections';
+import MenuNav from './Components/MenuNav';
 
 function App() {
 
   return (
     <>
-    <header>
-      <PetSelections />
-    </header>
+      <MenuNav />
   </>
   );
 }

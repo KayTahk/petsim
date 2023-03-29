@@ -15,11 +15,11 @@ function PetImage(props) {
     }
     const [isHovering, isHoverProps] = useHovering()
 
-    const hoverEyeStyle = (isHovering ? {width: '65px', height: '65px', backgroundColor: 'black', borderRadius: '100px 100px 100px 100px'} : {width: '60px', height: '60px', backgroundColor: 'black', borderRadius: '100px 100px 100px 100px'})
+    const hoverEyeStyle = (isHovering ? props.eyeChoice.hoverValue : props.eyeChoice.hoverDefaultValue)
 
     const hoverMouthStyle = (isHovering ? {borderRadius: '100px 100px 100px 100px', width: '15px', height: '15px'} : {borderRadius: '0px 0px 40px 40px', width: '40px', height: '20px'})
 
-    /* Sets petting expressions */
+    /* Sets petting/clicking expressions */
 
     function useFocusing() {
         const [focusing, setFocusing] = useState(false);
@@ -31,7 +31,7 @@ function PetImage(props) {
     }
     const [isFocusing, isFocusProps] = useFocusing()
 
-    const eyeStyle = (isFocusing ? {width: '65px', height: '35px', backgroundColor: 'black', borderRadius: '100px 100px 100px 100px'} : hoverEyeStyle)
+    const eyeStyle = (isFocusing ? props.eyeChoice.focusValue : hoverEyeStyle)
 
     const mouthStyle = (isFocusing ? {borderRadius: '0px 0px 40px 40px', width: '40px', height: '40px'} : hoverMouthStyle)
 
@@ -43,8 +43,8 @@ function PetImage(props) {
                     <div className='ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice, transform: 'rotate(90deg)'}}></div>
                 </div>
                 <div className="eyes">
-                    <div className="eye" style={eyeStyle}></div>
-                    <div className="eye" style={eyeStyle}></div>
+                    <div className="eye" style={eyeStyle}><div className='eye-shine' style={props.eyeChoice.eyeShineStyle}></div></div>
+                    <div className="eye" style={eyeStyle}><div className='eye-shine' style={props.eyeChoice.eyeShineStyle}></div></div>
                 </div>
                 <div className="mouth" style={mouthStyle}></div>
             </button>
