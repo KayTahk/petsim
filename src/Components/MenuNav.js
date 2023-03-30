@@ -2,6 +2,8 @@ import PetCustomizations from "./PetCustomizations";
 import { useState } from "react";
 import Care from "./Care"
 import Games from "./Games"
+import PetImage from './PetImage';
+import Stats from './Stats';
 import { Link, Route, Routes } from "react-router-dom";
 
 function MenuNav() {
@@ -16,11 +18,11 @@ function MenuNav() {
 
      /* Sets eye state */
 
-    const cuteEyeDefault = {width: '60px', height: '60px', backgroundColor: 'black', borderRadius: '100px'}
-    const cuteEyeHover = {width: '65px', height: '65px', backgroundColor: 'black', borderRadius: '100px'}
-    const cuteEyeFocus = {width: '65px', height: '35px', backgroundColor: 'black', borderRadius: '100px'}
-    const cuteEyeShine = {content: "", display: "block", width: "20px", height: "20px", backgroundColor: "white", borderRadius: "50%", position: "absolute", top: "30%", left: "30%", transform: "translate(-50%, -50%)"}
-    const [eyeChoice, setEyeChoice] = useState({hoverDefaultValue: cuteEyeDefault, hoverValue: cuteEyeHover, focusValue: cuteEyeFocus, eyeShineStyle: cuteEyeShine})
+    const [eyeChoice, setEyeChoice] = useState('cute')
+
+    /* Sets mouth state */
+
+    const [mouthChoice, setMouthChoice] = useState('happy')
 
     return (
             <div className="container">
@@ -35,10 +37,16 @@ function MenuNav() {
                         <Link to='/pet-games'>Pet Games</Link>
                     </li>
                 </ul>
+                <div className='home-body'>
+                    <div className='pet-image-stats'>
+                        <PetImage colorChoice={colorChoice} earChoice={earChoice} eyeChoice={eyeChoice} mouthChoice={mouthChoice} />
+                        <Stats />
+                    </div>
+                </div>
                 <Routes>
-                    <Route path='/' element={<PetCustomizations colorChoice={colorChoice} setColorChoice={setColorChoice} earChoice={earChoice} setEarChoice={setEarChoice} eyeChoice={eyeChoice} setEyeChoice={setEyeChoice}/>}/>
-                    <Route path='/pet-care' element={<Care colorChoice={colorChoice} setColorChoice={setColorChoice} earChoice={earChoice} setEarChoice={setEarChoice} eyeChoice={eyeChoice} setEyeChoice={setEyeChoice}/>}/>
-                    <Route path='/pet-games' element={<Games colorChoice={colorChoice} setColorChoice={setColorChoice} earChoice={earChoice} setEarChoice={setEarChoice} eyeChoice={eyeChoice} setEyeChoice={setEyeChoice}/>}/>
+                    <Route path='/' element={<PetCustomizations colorChoice={colorChoice} setColorChoice={setColorChoice} earChoice={earChoice} setEarChoice={setEarChoice} eyeChoice={eyeChoice} setEyeChoice={setEyeChoice} mouthChoice={mouthChoice} setMouthChoice={setMouthChoice}/>}/>
+                    <Route path='/pet-care' element={<Care colorChoice={colorChoice} setColorChoice={setColorChoice} earChoice={earChoice} setEarChoice={setEarChoice} eyeChoice={eyeChoice} setEyeChoice={setEyeChoice} mouthChoice={mouthChoice} setMouthChoice={setMouthChoice}/>}/>
+                    <Route path='/pet-games' element={<Games colorChoice={colorChoice} setColorChoice={setColorChoice} earChoice={earChoice} setEarChoice={setEarChoice} eyeChoice={eyeChoice} setEyeChoice={setEyeChoice} mouthChoice={mouthChoice} setMouthChoice={setMouthChoice}/>}/>
                 </Routes>
             </div>
     );

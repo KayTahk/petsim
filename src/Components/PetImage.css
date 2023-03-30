@@ -126,19 +126,6 @@ li {
     position: relative;
   }
 
-  .mouth::before {
-    content: "";
-    display: block;
-    width: 15px;
-    height: 10px;
-    background-color: darksalmon;
-    border-radius: 50% 50% 10px 10px;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
 @keyframes pet {
     0%   {left: calc(48% - 22em); height: 20em;}
     12%  {left: calc(48% - 22em); height: 17em;}
