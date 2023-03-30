@@ -4,29 +4,32 @@ import Stats from './Stats';
 import './PetImage.css'
 import { useState } from 'react';
 
-function PetSelections() {
+function PetCustomizations(props) {
 
-    /* Sets color state */
+    /* Sets eye options */
 
+    const colorChoice = props.colorChoice;
+    const setColorChoice = props.setColorChoice;
     const color = [
         { value: '#EAE0DA', label: '🐀 Grey' },
         { value: '#C1A58C', label: '🐻 Brown' },
         { value: '#A0C3D2', label: '🐟 Blue' }
     ];
 
-    const [colorChoice, setColorChoice] = useState("#EAE0DA")
+    /* Sets ear options */
 
-    /* Sets ear state */
-
+    const earChoice = props.earChoice;
+    const setEarChoice = props.setEarChoice;
     const earShape = [
         { value: "50% 50% 0% 50%", label: '🐶 Puppy' },
         { value: "50% 50% 50% 50%", label: '🐭 PomPom' },
         { value: "0% 50% 50% 50%", label: '🐽 Piggy' }
     ];
 
-    const [earChoice, setEarChoice] = useState('50% 50% 0% 50%')
-
     /* Sets eye state */
+
+    const eyeChoice = props.eyeChoice;
+    const setEyeChoice = props.setEyeChoice;
 
     const cuteEyeDefault = {width: '60px', height: '60px', backgroundColor: 'black', borderRadius: '100px'}
     const cuteEyeHover = {width: '65px', height: '65px', backgroundColor: 'black', borderRadius: '100px'}
@@ -43,8 +46,6 @@ function PetSelections() {
         { value: {hoverDefaultValue: creepyEyeDefault, hoverValue: creepyEyeHover, focusValue: creepyEyeFocus, eyeShineStyle: creepyEyeShine}, label: '😨 Creepy' }
     ];
 
-    const [eyeChoice, setEyeChoice] = useState({hoverDefaultValue: cuteEyeDefault, hoverValue: cuteEyeHover, focusValue: cuteEyeFocus, eyeShineStyle: cuteEyeShine})
-
     /* Sets mouth state */
 
     const mouthShape = [
@@ -56,7 +57,6 @@ function PetSelections() {
 
 
     return (
-        <>
         <div className='home-body'>
             <div className='pet-image-stats'>
                 <PetImage colorChoice={colorChoice} earChoice={earChoice} eyeChoice={eyeChoice} mouthChoice={mouthChoice} />
@@ -92,8 +92,7 @@ function PetSelections() {
                 </div>
             </div>
         </div>
-        </>
     );
 };
 
-export default PetSelections;
+export default PetCustomizations;
