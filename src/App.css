@@ -42,7 +42,7 @@ body {
   text-decoration: none;
 }
 
-.nav-list a:focus, a:hover {
+.nav-item.selected a {
   color: #F7F5EB;
   text-decoration: underline;
   text-underline-offset: 17px;
@@ -103,6 +103,27 @@ body {
 .selections label {
   font-size: 18px;
   color: #7B6079;
+}
+
+.pet-button {
+  width: 10em;
+  height: 3em;
+  border-radius: 20px;
+  border: 5px solid #7B6079;
+  font-weight: bold;
+  font-size: 30px;
+  color: #7B6079;
+}
+
+.pet-button:hover {
+  cursor: pointer
+}
+
+.pet-button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  border: none;
+  cursor: default;
 }
 
 .css-b62m3t-container {

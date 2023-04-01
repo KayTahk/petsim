@@ -73,9 +73,15 @@ function PetImage(props) {
 
     const mouthStyle = (isFocusing ? mouthFocus : hoverMouthStyle)
 
+    /* Sets click stats */
+
+    const handleClick = () => {
+        props.setClickCount(props.clickCount + 1);
+      };
+
     return (
         <div className="petImage">
-            <button className="body" style={{backgroundColor: props.colorChoice}} {...isHoverProps} {...isFocusProps}>
+            <button className="body" onClick={handleClick} style={{backgroundColor: props.colorChoice}} {...isHoverProps} {...isFocusProps}>
                 <div className='ears'>
                     <div className='ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice}}></div>
                     <div className='ear' style={{backgroundColor: props.colorChoice, borderRadius: props.earChoice, transform: 'rotate(90deg)'}}></div>
